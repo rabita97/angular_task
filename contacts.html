@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="ContactApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Rabita's Contact List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="ContactController">
+
+    <h2>Rabita's Contact List</h2>
+    <div class="contact-card" ng-repeat="person in contacts | orderBy:'name'">
+        <strong>{{ person.name }}</strong><br>
+        {{ person.phone }}
+    </div>
+
+    <script>
+        angular.module('ContactApp', [])
+            .controller('ContactController', function($scope) {
+                $scope.contacts = [
+                    { name: "Zara", phone: "647-887-9589" },
+                    { name: "Alice", phone: "647-768-0949" },
+                    { name: "John", phone: "902-665-8384" },
+                    { name: "Bob", phone: "782-889-4504" },
+                    { name: "Nadia", phone: "647-887-9696" },
+                    { name: "Fariha", phone: "894-998-0929" },
+                    { name: "Liam", phone: "902-990-1414" },
+                    { name: "Maya", phone: "647-990-2323" },
+                    { name: "Anika", phone: "902-220-1818" },
+                    { name: "Reza", phone: "647-990-9090" },
+                    { name: "Tariq", phone: "902-929-7878" },
+                    { name: "Elena", phone: "782-990-4545" },
+                    { name: "Sameer", phone: "647-009-3030" },
+                    { name: "Yasmin", phone: "902-909-5050" },
+                    { name: "Omar", phone: "647-990-6464" }
+                ];
+            });
+    </script>
+
+</body>
+</html>
